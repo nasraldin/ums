@@ -1,0 +1,29 @@
+.mat-card-title {
+  font-size: 1.3em;
+  .mat-icon,
+  span {
+    position: relative;
+    top: 5px;
+  }
+  span {
+    left: 5px;
+    top: 0;
+  }
+}
+
+.mat-card-pad {
+  padding: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-input-element:disabled {
+  color: #000;
+}

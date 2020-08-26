@@ -1,24 +1,55 @@
 {
   "name": "ums",
   "version": "0.0.0",
+  "author": {
+    "name": "Nasr Aldin",
+    "email": "nasr2ldin@gmail.com",
+    "github": "https://github.com/nasraldin"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port=4200 --o --proxy-config proxy.config.json",
     "build": "ng build",
-    "test": "ng test",
+    "api": "json-server-auth api/db.json --routes api/routes.json",
+    "test": "jest",
+    "test:cover": "jest --coverage",
+    "start-app": "concurrently \"npm run start\" \"npm run api\"",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "format": "prettier --write src/app/**/*.ts",
+    "format:check": "prettier --check src/app/**/*.ts",
+    "eslint": "npx eslint --print-config ./src/main.ts | npx eslint-config-prettier-check",
+    "eslint:fix": "eslint --fix",
+    "docs": "compodoc -p tsconfig.json -d docs",
+    "docs:serve": "compodoc -p tsconfig.json -d docs -s"
+  },
+  "proxy": "http://localhost:3000",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm test && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,html}": [
+      "prettier --write src/app/**/*.ts"
+    ]
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.12",
+    "@angular/cdk": "^9.2.4",
     "@angular/common": "~9.1.12",
     "@angular/compiler": "~9.1.12",
     "@angular/core": "~9.1.12",
+    "@angular/flex-layout": "9.0.0-beta.29",
     "@angular/forms": "~9.1.12",
+    "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.12",
     "@angular/platform-browser-dynamic": "~9.1.12",
     "@angular/router": "~9.1.12",
+    "json-server": "^0.16.1",
+    "json-server-auth": "^2.0.2",
+    "ngx-n-logger": "0.0.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -27,18 +58,19 @@
     "@angular-devkit/build-angular": "~0.901.12",
     "@angular/cli": "~9.1.12",
     "@angular/compiler-cli": "~9.1.12",
-    "@types/node": "^12.11.1",
-    "@types/jasmine": "~3.5.0",
-    "@types/jasminewd2": "~2.0.3",
+    "@compodoc/compodoc": "^1.1.11",
+    "@types/jest": "^26.0.10",
     "codelyzer": "^5.1.2",
-    "jasmine-core": "~3.5.0",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~2.1.0",
-    "karma-jasmine": "~3.0.1",
-    "karma-jasmine-html-reporter": "^1.4.2",
+    "concurrently": "^5.3.0",
+    "eslint": "^7.7.0",
+    "eslint-config-prettier": "^6.11.0",
+    "husky": "^4.2.5",
+    "jest": "^26.4.2",
+    "jest-preset-angular": "^8.3.1",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
     "protractor": "~7.0.0",
+    "ts-jest": "^26.2.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"

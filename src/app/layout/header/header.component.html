@@ -1,0 +1,40 @@
+<mat-toolbar
+  color="primary"
+  aria-label="toolbar"
+  class="topbar fixed-top center-topbar-content"
+>
+  <button fxShow="true" fxShow.gt-xs="false" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <a fxShow="false" fxShow.gt-xs="true" class="logo-link" href="/">
+    <span class="logo-text">Users Management</span>
+  </a>
+  <span class="header-spacer"></span>
+  <nav>
+    <ul
+      fxLayout="row"
+      fxShow="false"
+      fxShow.gt-xs="true"
+      class="nav-ul-menu"
+      role="navigation"
+    >
+      <li class="nav-item">
+        <a
+          mat-button
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li class="nav-item">
+        <a *ngIf="accountService.userValue" mat-button routerLink="/users" routerLinkActive="active">Users</a>
+      </li>
+      <li class="nav-item">
+        <a mat-button (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </nav>
+</mat-toolbar>
+<div class="navigation-empty" fxShow="false" fxShow.gt-xs="true"></div>

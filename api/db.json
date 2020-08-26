@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "firstName": "Nasr",
+      "lastName": "Aldin",
+      "email": "admin@gmail.com",
+      "username": "admin",
+      "password": "$2a$10$XsTNjzrDB8Phm/3oUBH2Wu6Jb2OPeojNqI5KOmyq3at4umubKyUiy",
+      "role": "admin",
+      "city": "Abu Dhabi",
+      "id": 1
+    },
+    {
+      "firstName": "Nasr Aldin",
+      "lastName": "Aldin",
+      "email": "user@gmail.com",
+      "username": "user",
+      "password": "$2a$10$9PWySKE9JZMn2p9cFXp3a.f4ehmXcPk2/Gmo.4X1GuGWCH7PWyPim",
+      "role": "",
+      "city": "Abu Dhabi",
+      "id": 2
+    },
+    {
+      "email": "ahmed@gmail.com",
+      "password": "$2a$10$MFH9ode2qBsYbt7HZZ0OTurLNw/bqbgy5dVnG8Y8fkQXhrhHUjOY.",
+      "username": "ahmed",
+      "role": "",
+      "firstName": "Ahmed",
+      "lastName": "Mohamed",
+      "city": "Dubai",
+      "id": 3
+    },
+    {
+      "email": "ali@gmail.com",
+      "password": "$2a$10$TIf/hqYvH02yacLFQFu/0ONzSCYM7XaTH0ClXEiuFgXudPkl03Jy6",
+      "username": "ali",
+      "role": "",
+      "firstName": "Ali",
+      "lastName": "Mohamed",
+      "city": "Dubai",
+      "id": 4
+    },
+    {
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "test@gmail.com",
+      "username": "test",
+      "password": "$2a$10$QF4PJSKRUBQ7tdVBsfsItON9UlKsdCMYbiV3Swm5Jwfsp4aGJAqA6",
+      "role": "",
+      "city": "",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+.mat-card-title {
+  font-size: 1.3em;
+  .mat-icon,
+  span {
+    position: relative;
+    top: 5px;
+  }
+  span {
+    left: 5px;
+    top: 0;
+  }
+}
+
+form {
+  padding: 1.5rem;
+  padding-bottom: 0;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.full-width {
+  width: 100%;
+}

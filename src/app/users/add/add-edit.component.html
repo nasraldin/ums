@@ -1,0 +1,99 @@
+﻿<mat-card class="center">
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>account_circle</mat-icon>
+      <span *ngIf="isAddMode">Add User</span>
+      <span *ngIf="!isAddMode">Edit User</span>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name" formControlName="firstName" />
+        <mat-error *ngIf="submitted && formFields.firstName.errors">
+          <span *ngIf="formFields.firstName.errors.required">
+            First Name is required
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name" formControlName="lastName" />
+        <mat-error *ngIf="submitted && formFields.lastName.errors">
+          <span *ngIf="formFields.lastName.errors.required">
+            Last Name is required
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="nasr@example.com"
+          formControlName="email"
+        />
+        <mat-error *ngIf="submitted && formFields.email.errors">
+          <span *ngIf="formFields.email.errors.required">
+            Email is required
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input
+          readonly="{{ !isAddMode }}"
+          matInput
+          placeholder="Username"
+          formControlName="username"
+        />
+        <mat-error *ngIf="submitted && formFields.username.errors">
+          <span *ngIf="formFields.username.errors.required">
+            Username is required
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>
+          Enter your password
+          <em *ngIf="!isAddMode">(Leave blank to keep the same password)</em>
+        </mat-label>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          formControlName="password"
+        />
+        <button
+          type="button"
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error *ngIf="submitted && formFields.password.errors">
+          <span *ngIf="formFields.password.errors.required">
+            Password is required
+          </span>
+          <span *ngIf="formFields.password.errors.minlength">
+            Password must be at least 6 characters
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field *ngIf="isAdmin" appearance="fill" class="full-width">
+        <mat-label>User Role</mat-label>
+        <input matInput placeholder="admin or user" formControlName="role" />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>City</mat-label>
+        <input matInput placeholder="City" formControlName="city" />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="text-right">
+      <a routerLink="/users" mat-button>Cancel</a>
+      <button type="submit" mat-raised-button color="primary">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
