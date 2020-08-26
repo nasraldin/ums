@@ -5,6 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
+First Run `npm install` to install dependencies
+
 Run `npm run start-app` for a dev server. Navigate to http://localhost:4200. for frontend app and navigate to http://localhost:3000. for bacnkend API server.
 
 Also, you can run api by `npm run api` and ui by `npm run start-app`
